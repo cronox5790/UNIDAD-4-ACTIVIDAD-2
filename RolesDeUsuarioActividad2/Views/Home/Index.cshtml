@@ -1,0 +1,40 @@
+﻿
+@{ Layout = "_Layout"; }
+<main>
+    <section id="datos">
+        @if (User.IsInRole("Maestro"))
+        {
+            <h1>Acceso como maestro</h1>
+            <h3>@User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</h3>
+            <form id="perfil">
+            <br />
+            <a href="~/Home/ListaDeAlumnos/@(int.Parse(User.Claims.FirstOrDefault(x=>x.Type=="Id").Value))">
+            Ver alumnos
+            </a> 
+        <br /> 
+        <br />
+        <br />
+        <br />
+        <a href="/Home/CerrarSesion">Cerrar sesión</a>
+        <br />
+        <br />
+        <br />
+                </form>}
+        @if (User.IsInRole("Director"))
+        {
+            <form id="perfil">
+        <h1>Bienvenido</h1>
+        <h3>@User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</h3>
+        <br />
+        <a href="~/Home/ListaDeMaestros">lista de los maestros</a>
+        <br />
+        <br />
+        <br />
+        <a href="~/Home/CerrarSesion">Cerrar sesión</a>
+        <br />
+        <br />
+        <br />
+                </form>
+                }
+    </section>
+</main>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RolesDeUsuarioActividad2.Models.Maestro>
+@{ Layout = "_Layout"; }
+<main>
+    <section id="datos">
+        <h1>Lista de maestros</h1>
+        <a href="~/Home/AltaMaestros">Dar de alta a maestro</a>
+        <table id="tablas">
+            <thead>
+                <tr>
+                    <th>Número de control</th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Grupo</th>
+                            <th></th>
+                            <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var maestro in Model)
+                {
+    <tr>
+        <td>@maestro.NumControl</td>
+        <td>@maestro.Nombre</td>
+        <td id="activo" href="#" onclick="cambiar(@maestro.Id)">
+        @((maestro.Activo==1)?"Activo":"Inactivo")
+        </td>
+
+        @if (maestro.Activo == 1)
+        {
+<td>
+    <a href="~/Home/ListaDeAlumnos/@maestro.Id">lista de alumnos</a>
+</td>
+                    <td>
+                        <a href="~/Home/EditarMaestros/@maestro.Id">Editar</a>
+                    </td>
+                    <td>
+                    <a href="~/Home/CambiarClaveMaestro/@maestro.Id">Cambiar contraseña</a>
+                    </td>
+                    }
+    </tr>
+    }
+            </tbody>
+        </table>
+        <a href="~/Home/Index">Cancelar</a>
+    </section>
+    <form method="post" action="~/Home/EstadoMaestro">
+        <input type="number" id="idMaestro" name="Id" hidden />
+    </form>
+    <script>
+        function cambiar(id) {
+            document.getElementById("idMaestro").value = id;
+            document.querySelector("form").submit();
+        }
+    </script>
+</main>

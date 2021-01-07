@@ -1,0 +1,35 @@
+﻿@model RolesDeUsuarioActividad2.Models.ViewModels.AlumnoViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+<main>
+    <section id="datos">
+        <h1>Agregar Alumno Nuevo</h1>
+        <form method="post" action="~/Home/AgregarAlumno">
+            @if (User.IsInRole("Maestro"))
+            {
+<label id="labels">
+    @User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value está agregando un alumno nuevo
+
+</label> }
+            else if (User.IsInRole("Director"))
+            {
+<label id="labels">
+    Alumno asignado a: <input id="txtdisplay" type="text" asp-for="Maestro.Nombre" />
+</label>            }
+            <br />
+            <label id="labels">Número de control del maestro:</label> <input id="txtdisplay" type="number" asp-for="Maestro.NumControl" readonly />
+            <br />
+            <label id="editar">Número de control del alumno:</label>
+            <input type="text" asp-for="Alumno.NumControl" required />
+            <br />
+            <label id="editar">Nombre completo del alumno:</label>
+            <input type="text" asp-for="Alumno.Nombre" required />
+            <br />
+            @Html.ValidationSummary()
+            <input type="submit" value="Dar de alta" />
+
+            <a href="~/Home/ListaDeAlumnos/@(Model.Maestro.Id)">Cancelar</a>
+        </form>
+    </section>
+
+</main>

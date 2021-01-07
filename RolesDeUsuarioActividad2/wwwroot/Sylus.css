@@ -1,0 +1,167 @@
+﻿html {
+    background-color: gray;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+body {
+    background-color: gray;
+    width: 1300px;
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+}
+
+    header img {
+        height: 150px;
+        margin-right: 50px;
+        margin-top: 5px;
+    }
+
+
+main {
+    margin: 20px;
+    text-align: left;
+}
+
+    main h1 {
+        position: relative;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 30px;
+        color: #505c58;
+    }
+
+    main h3 {
+        position: relative;
+        font-size: 30px;
+        color: black;
+        font-weight: bolder;
+    }
+
+    main input[type=text], input[type=password], input[type=number], input[type=submit] {
+        border-radius: 5px;
+        font-size: 30px;
+        margin: 5px;
+    }
+
+    main input[type=submit] {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    main a {
+        font-size: 30px;
+        color: black;
+    }
+
+    main p, select {
+        font-size: 30px;
+        margin: 20px;
+    }
+
+    main label {
+        font-size: 30px;
+        margin: 20px;
+    }
+
+    main table {
+        background-color: black;
+        font-size: 20px;
+        margin: 10px;
+        border: 2px solid black;
+    }
+
+        main table thead {
+            background-color: gray;
+            text-align: center;
+            color: white;
+        }
+
+        main table th {
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        main table tbody {
+            background-color: gray;
+        }
+
+        main table td {
+            padding: 10px;
+        }
+
+            main table td a {
+                font-size: 20px;
+            }
+
+    main form a {
+        font-size: 30px;
+        color: white;
+        margin: 10px;
+        font-weight: bold;
+    }
+
+footer {
+    margin: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: #505c58;
+    border-radius: 10px;
+}
+
+#activo {
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px outset #808080;
+    border-radius: 10px;
+    background-color: #505c58;
+    text-align: center;
+}
+
+#txtdisplay {
+    border: 0px transparent;
+    color: #277c1a;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#labels {
+    color: #4d4242;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#editar {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#perfil a {
+    font-size: 30px;
+    color: #4d4242;
+    font-weight: bold;
+}
+
+#datos {
+    margin-left: 50px;
+}
+
+#tablas {
+    margin-left: -50px;
+}
+
+#maestro {
+    border-radius: 5px;
+    font-size: 30px;
+    margin: 5px;
+}

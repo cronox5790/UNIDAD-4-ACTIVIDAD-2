@@ -1,0 +1,17 @@
+﻿@model RolesDeUsuarioActividad2.Models.Maestro
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+<main>
+    <section id="datos">
+        <h1>Inicio de sesion para maestros</h1>
+        <a href="~/Home/DirectorInicioSesion">Acceder como director</a>
+        <form method="post" action="~/Home/MaestroInicioSesion">
+            <input type="number" asp-for="NumControl" placeholder="Número de control" required />
+            <br />
+            <input type="password" asp-for="Clave" placeholder="clave" required />
+            <br />
+            <input type="submit" value="Acceder como maestro" />
+            @Html.ValidationSummary()
+        </form>
+    </section>
+</main>

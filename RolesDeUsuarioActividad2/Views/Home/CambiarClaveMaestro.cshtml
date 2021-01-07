@@ -1,0 +1,26 @@
+﻿@model RolesDeUsuarioActividad2.Models.Maestro
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+<main>
+    <section id="datos">
+        <h1>Cambiar contraseña</h1>
+        
+        <label id="labels">Esta contraseña será asignada a: </label>
+        <input id="txtdisplay" type="text" asp-for="Nombre" readonly />
+        <form method="post" action="~/Home/CambiarClaveMaestro">
+            
+            <input type="hidden" asp-for="Id" />
+            <br />
+            <input type="password" asp-for="Clave" name="nuevaContra" placeholder="Nueva contraseña" required />
+            
+            <br />
+            <input type="password" name="nuevaContraConfirm" placeholder="Confirmar contraseña" required />
+            <br />
+            @Html.ValidationSummary()
+            <input type="submit" value="Cambiar" />
+           
+            <a href="~/Home/ListaDeMaestros">Cancelar</a>
+       
+        </form>
+    </section>
+</main>
